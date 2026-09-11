@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FG Call - {{ room_id }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body data-room-id="{{ room_id }}">
+<div class="call-screen">
+  <div class="video-area">
+    <video id="remoteVideo" class="remote-video" autoplay playsinline></video>
+    <div id="remotePlaceholder" class="remote-placeholder">
+      <p id="statusText">Waiting for peer to join…</p>
+    </div>
+    <video id="localVideo" class="local-video" autoplay playsinline muted></video>
+
+    <div class="top-bar">
+      <span id="connIndicator" class="conn-indicator conn-connecting">Connecting</span>
+      <button id="copyLinkBtn" class="btn-icon" title="Copy invite link">⎘ Copy Link</button>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="micBtn" class="ctrl-btn" title="Mute microphone">🎤</button>
+    <button id="camBtn" class="ctrl-btn" title="Turn off camera">📷</button>
+    <button id="screenBtn" class="ctrl-btn" title="Share screen">🖥️</button>
+    <button id="leaveBtn" class="ctrl-btn ctrl-leave" title="Leave call">✕</button>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/call.js') }}"></script>
+</body>
+</html>

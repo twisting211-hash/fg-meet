@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FG Call</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="home">
+  <div class="home-card">
+    <h1 class="logo">FG Call</h1>
+    <p class="tagline">Simple 1-to-1 video calls</p>
+
+    <button id="createBtn" class="btn btn-primary">Create Room</button>
+
+    <div class="divider"><span>or</span></div>
+
+    <input id="roomInput" class="input" type="text" placeholder="Enter room ID" maxlength="32">
+    <button id="joinBtn" class="btn btn-secondary">Join Room</button>
+
+    <p id="errorMsg" class="error-msg"></p>
+  </div>
+
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">◐</button>
+</div>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
